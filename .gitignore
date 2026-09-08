@@ -55,7 +55,9 @@ dataset/cifar-10-batches-py/
 dataset/cifar-100-python/
 dataset/tiny-imagenet-200/
 *.log
-*.txt
+outputs/
+.pytest_cache/
+.ruff_cache/
 tmpclaude-*
 
 # Experiments

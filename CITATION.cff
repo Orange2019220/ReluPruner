@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "ReLUPruner"
+type: software
+authors:
+  - family-names: Li
+    given-names: Zhenpeng
+repository-code: "https://github.com/Orange2019220/ReluPruner"
+license: MIT
+preferred-citation:
+  type: conference-paper
+  title: "ReLUPruner: Rethinking ReLU Importance with Taylor Expansion for Efficient Private Inference"
+  authors:
+    - family-names: Li
+      given-names: Zhenpeng
+    - family-names: Liu
+      given-names: Jinshuo
+    - family-names: Wang
+      given-names: Xinyan
+    - family-names: Wang
+      given-names: Lina
+    - family-names: Pan
+      given-names: Jeff Z.
+  collection-title: "Proceedings of the AAAI Conference on Artificial Intelligence"
+  volume: 40
+  issue: 28
+  start: 23328
+  end: 23336
+  year: 2026
