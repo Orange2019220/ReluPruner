@@ -193,9 +193,23 @@ case "${STAGE}" in
     ;;
 esac
 
-if [[ ! -x "${PYTHON_BIN}" ]]; then
-  echo "Python executable is not available: ${PYTHON_BIN}" >&2
-  exit 2
+if [[ "${PYTHON_BIN}" == */* ]]; then
+  if [[ "${PYTHON_BIN}" != /* ]]; then
+    PYTHON_BIN="${SCRIPT_DIR}/${PYTHON_BIN}"
+  fi
+  if [[ ! -x "${PYTHON_BIN}" ]]; then
+    echo "Python executable is not available: ${PYTHON_BIN}" >&2
+    exit 2
+  fi
+else
+  PYTHON_BIN="$(command -v "${PYTHON_BIN}" || true)"
+  if [[ -z "${PYTHON_BIN}" ]]; then
+    echo "Python executable is not available on PATH" >&2
+    exit 2
+  fi
+fi
+if [[ "${DATA_ROOT}" != /* ]]; then
+  DATA_ROOT="${SCRIPT_DIR}/${DATA_ROOT}"
 fi
 if [[ ! -d "${DATA_ROOT}" ]]; then
   echo "Dataset root does not exist: ${DATA_ROOT}" >&2
